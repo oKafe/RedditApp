@@ -9,12 +9,20 @@ import UIKit
 
 class RedditTopListCell: UITableViewCell {
 
+    @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var postTitleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        thumbnailImageView.image = UIImage(named: "placeholderImage")
+        thumbnailImageView.cancelImageLoading()
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -22,7 +30,8 @@ class RedditTopListCell: UITableViewCell {
     }
     
     func configureWith(_ model: Model<Child>) {
-        self.postTitleLabel.text = model.data?.title
+        postTitleLabel.text = model.data?.title
+        thumbnailImageView.loadImage(from: model.data?.thumbnail)
     }
 
 }

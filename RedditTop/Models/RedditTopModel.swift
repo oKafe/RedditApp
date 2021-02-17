@@ -21,11 +21,23 @@ struct RedditTop: Codable {
 struct Child: Codable {
     let title: String?
     let authorFullname: String?
+    let author: String?
     let name: String?
+    let numberOfComments: Int?
+    let url: String?
+    let thumbnail: String?
+    let isVideo: Bool?
+    let createdUTC: Int?
     
     enum CodingKeys: String, CodingKey {
         case authorFullname = "author_fullname"
+        case author
         case title
         case name
+        case numberOfComments = "num_comments"
+        case url
+        case isVideo = "is_video"
+        case createdUTC = "created_utc"
+        case thumbnail
     }
 }

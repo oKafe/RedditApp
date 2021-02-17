@@ -17,6 +17,8 @@
 		393074C525DD4DEB009E495E /* URLSession+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393074C425DD4DEB009E495E /* URLSession+Ext.swift */; };
 		393074C825DD5685009E495E /* RedditTopNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393074C725DD5685009E495E /* RedditTopNetworkManager.swift */; };
 		393074CC25DD59E3009E495E /* RedditTopListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393074CB25DD59E3009E495E /* RedditTopListCell.swift */; };
+		3930751825DD88EA009E495E /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930751725DD88EA009E495E /* ImageLoader.swift */; };
+		3930751B25DD8AC3009E495E /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930751A25DD8AC3009E495E /* UIImageView+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		393074C425DD4DEB009E495E /* URLSession+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Ext.swift"; sourceTree = "<group>"; };
 		393074C725DD5685009E495E /* RedditTopNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditTopNetworkManager.swift; sourceTree = "<group>"; };
 		393074CB25DD59E3009E495E /* RedditTopListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditTopListCell.swift; sourceTree = "<group>"; };
+		3930751725DD88EA009E495E /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		3930751A25DD8AC3009E495E /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				393074C725DD5685009E495E /* RedditTopNetworkManager.swift */,
+				3930751725DD88EA009E495E /* ImageLoader.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -107,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				393074C425DD4DEB009E495E /* URLSession+Ext.swift */,
+				3930751A25DD8AC3009E495E /* UIImageView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -192,9 +198,11 @@
 				393074C825DD5685009E495E /* RedditTopNetworkManager.swift in Sources */,
 				393074CC25DD59E3009E495E /* RedditTopListCell.swift in Sources */,
 				393074AD25DD4BD9009E495E /* RedditTopListVC.swift in Sources */,
+				3930751B25DD8AC3009E495E /* UIImageView+Ext.swift in Sources */,
 				393074A925DD4BD9009E495E /* AppDelegate.swift in Sources */,
 				393074AB25DD4BD9009E495E /* SceneDelegate.swift in Sources */,
 				393074C525DD4DEB009E495E /* URLSession+Ext.swift in Sources */,
+				3930751825DD88EA009E495E /* ImageLoader.swift in Sources */,
 				393074C225DD4DD3009E495E /* RedditTopModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
