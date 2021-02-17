@@ -56,15 +56,47 @@
 		393074A725DD4BD9009E495E /* RedditTop */ = {
 			isa = PBXGroup;
 			children = (
+				393074C025DD4D3C009E495E /* Extensions */,
+				393074BF25DD4D04009E495E /* Controllers */,
+				393074BE25DD4CF9009E495E /* Models */,
+				393074BD25DD4CEF009E495E /* Services */,
 				393074A825DD4BD9009E495E /* AppDelegate.swift */,
 				393074AA25DD4BD9009E495E /* SceneDelegate.swift */,
-				393074AC25DD4BD9009E495E /* ViewController.swift */,
 				393074AE25DD4BDA009E495E /* Main.storyboard */,
 				393074B125DD4BDF009E495E /* Assets.xcassets */,
 				393074B325DD4BDF009E495E /* LaunchScreen.storyboard */,
 				393074B625DD4BDF009E495E /* Info.plist */,
 			);
 			path = RedditTop;
+			sourceTree = "<group>";
+		};
+		393074BD25DD4CEF009E495E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		393074BE25DD4CF9009E495E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		393074BF25DD4D04009E495E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				393074AC25DD4BD9009E495E /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		393074C025DD4D3C009E495E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
