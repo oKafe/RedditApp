@@ -15,6 +15,7 @@
 		393074B525DD4BDF009E495E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 393074B325DD4BDF009E495E /* LaunchScreen.storyboard */; };
 		393074C225DD4DD3009E495E /* RedditTopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393074C125DD4DD3009E495E /* RedditTopModel.swift */; };
 		393074C525DD4DEB009E495E /* URLSession+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393074C425DD4DEB009E495E /* URLSession+Ext.swift */; };
+		393074C825DD5685009E495E /* RedditTopNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393074C725DD5685009E495E /* RedditTopNetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		393074B625DD4BDF009E495E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		393074C125DD4DD3009E495E /* RedditTopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditTopModel.swift; sourceTree = "<group>"; };
 		393074C425DD4DEB009E495E /* URLSession+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Ext.swift"; sourceTree = "<group>"; };
+		393074C725DD5685009E495E /* RedditTopNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditTopNetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		393074BD25DD4CEF009E495E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				393074C725DD5685009E495E /* RedditTopNetworkManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				393074C825DD5685009E495E /* RedditTopNetworkManager.swift in Sources */,
 				393074AD25DD4BD9009E495E /* ViewController.swift in Sources */,
 				393074A925DD4BD9009E495E /* AppDelegate.swift in Sources */,
 				393074AB25DD4BD9009E495E /* SceneDelegate.swift in Sources */,
