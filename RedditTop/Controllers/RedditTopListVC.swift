@@ -11,14 +11,16 @@ class RedditTopListVC: UIViewController {
     
     @IBOutlet weak var topListTableView: UITableView!
     
-    private var redditTopChilds = [Child]()
+    private var redditTopChilds = [Model<Child>]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         RedditTopNetworkManager.getRedditTop { (result, response, error) in
             if let result = result {
-                self.redditTopChilds = result.data?.children ?? [Child]()
-                self.topListTableView.reloadData()
+                DispatchQueue.main.async {
+                    self.redditTopChilds = result.data?.children ?? [Model<Child>]()
+                    self.topListTableView.reloadData()
+                }
             }
         }
     }

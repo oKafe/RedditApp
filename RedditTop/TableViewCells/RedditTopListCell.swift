@@ -21,7 +21,7 @@ class RedditTopListCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureWith(_ model: Child) {
+    func configureWith(_ model: Model<Child>) {
         self.postTitleLabel.text = model.data?.title
     }
 

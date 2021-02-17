@@ -7,24 +7,18 @@
 
 import Foundation
 
-
-struct RedditTop: Codable {
+struct Model<T: Codable>: Codable {
     let kind: String?
-    let data: RedditTopData?
+    let data: T?
 }
 
-struct RedditTopData: Codable {
-    let children: [Child]?
+struct RedditTop: Codable {
+    let children: [Model<Child>]?
     let after: String?
     let before: String?
 }
 
 struct Child: Codable {
-    let kind: String?
-    let data: ChildData?
-}
-
-struct ChildData: Codable {
     let title: String?
     let authorFullname: String?
     let name: String?
