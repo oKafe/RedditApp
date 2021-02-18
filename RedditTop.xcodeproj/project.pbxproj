@@ -80,9 +80,9 @@
 		393074A725DD4BD9009E495E /* RedditTop */ = {
 			isa = PBXGroup;
 			children = (
+				393074BF25DD4D04009E495E /* Controllers */,
 				393074CA25DD5975009E495E /* TableViewCells */,
 				393074C025DD4D3C009E495E /* Extensions */,
-				393074BF25DD4D04009E495E /* Controllers */,
 				393074BE25DD4CF9009E495E /* Models */,
 				393074BD25DD4CEF009E495E /* Network */,
 				393074A825DD4BD9009E495E /* AppDelegate.swift */,

@@ -34,7 +34,7 @@ class RedditTopListCell: UITableViewCell {
     func configureWith(_ model: Model<Child>) {
         postTitleLabel.text = model.data?.title
         thumbnailImageView.loadImage(from: model.data?.thumbnail)
-        numberOfCommentsLabel.text = "\(model.data?.numberOfComments ?? 0) comments"
+        numberOfCommentsLabel.text = "\(model.data?.numberOfComments ?? 0) Comments"
         guard let createdAt = model.data?.createdUTC else {
             timeLabel.text = nil
             return

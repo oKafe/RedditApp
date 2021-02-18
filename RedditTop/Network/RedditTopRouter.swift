@@ -34,7 +34,6 @@ enum RedditTopRouter: Router {
         components.queryItems = parameters.map { (key, value) in
             URLQueryItem(name: key, value: "\(value)")
         }
-        //components.percentEncodedQuery = components.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
         var request = URLRequest(url: components.url!)
         request.httpMethod = method.rawValue
         return request
