@@ -8,14 +8,18 @@
 import Foundation
 
 extension URLSession {
-    func customCodableTask<T: Codable>(_ url: URL, completion: @escaping (T?, URLResponse?, Error?) -> ()) -> URLSessionDataTask {
-        return self.dataTask(with: url) { (data, response, error) in
+    func customCodableTask<T: Codable>(_ urlRequest: URLRequest, completion: @escaping (T?, URLResponse?, Error?) -> ()) -> URLSessionDataTask {
+        return self.dataTask(with: urlRequest) { (data, response, error) in
             guard let data = data, error == nil else {
-                completion(nil, response, error)
+                DispatchQueue.main.async {
+                    completion(nil, response, error)
+                }
                 return
             }
             let result = try? JSONDecoder().decode(T.self, from: data)
-            completion(result, response, nil)
+            DispatchQueue.main.async {
+                completion(result, response, nil)
+            }
         }
     }
 }

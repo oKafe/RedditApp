@@ -11,34 +11,56 @@ class RedditTopListVC: UIViewController {
     
     @IBOutlet weak var topListTableView: UITableView!
     
-    private var redditTopChilds = [Model<Child>]()
+    private var redditTopChilds: [Model<Child>]?
+    
+    private let dataRequestsManager = RedditTopListRequestsManager(limit: 20)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        RedditTopNetworkManager.getRedditTop { (result, response, error) in
-            if let result = result {
-                DispatchQueue.main.async {
-                    self.redditTopChilds = result.data?.children ?? [Model<Child>]()
-                    self.topListTableView.reloadData()
-                }
-            }
+        dataRequestsManager.refresh { (result, error) in
+            self.updateDataList(model: result)
         }
     }
+    
+    private func updateDataList(model: Model<RedditTop>?) {
+        guard let childs = model?.data?.children else { return }
+        if redditTopChilds != nil {
+            redditTopChilds?.append(contentsOf: childs)
+        } else {
+            redditTopChilds = childs
+        }
+        topListTableView.reloadData()
+    }
+    
+    private func isLastCell(_ indexPath: IndexPath) -> Bool {
+        return indexPath.row >= (self.redditTopChilds?.count ?? 0) - 2
+    }
+    
+    private func loadNext() {
+        dataRequestsManager.loadNext { (result, error) in
+            self.updateDataList(model: result)
+        }
+    }
+    
 }
 
 //MARK: - TableView
 extension RedditTopListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return redditTopChilds.count
+        return redditTopChilds?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "RedditTopListCell", for: indexPath) as? RedditTopListCell else { return UITableViewCell() }
         
-        let redditTopChild = redditTopChilds[indexPath.row]
+        if let redditTopChild = redditTopChilds?[indexPath.row] {
+            cell.configureWith(redditTopChild)
+        }
         
-        cell.configureWith(redditTopChild)
+        if self.isLastCell(indexPath) {
+            self.loadNext()
+        }
         
         return cell
     }
