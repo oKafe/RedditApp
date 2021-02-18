@@ -7,6 +7,10 @@
 
 import UIKit
 
+enum SegueIdentifier: String {
+    case openFullImage = "OpenFullImage"
+}
+
 class RedditTopListVC: UIViewController {
     
     @IBOutlet weak var topListTableView: UITableView!
@@ -53,10 +57,22 @@ class RedditTopListVC: UIViewController {
 
 //MARK: - Actions
 extension RedditTopListVC {
-    @objc func refreshControllAction() {
+    @objc fileprivate func refreshControllAction() {
         self.redditTopChilds = nil
         refreshData()
     }
+}
+
+//MARK: - Segue
+extension RedditTopListVC {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == SegueIdentifier.openFullImage.rawValue {
+            guard let redditTopChild = sender as? Model<Child> else { return }
+            guard let imageViewerVC = segue.destination as? ImageViewerModalVC else { return }
+            imageViewerVC.imageUrl = redditTopChild.data?.url
+        }
+    }
+
 }
 
 //MARK: - TableView
@@ -78,6 +94,12 @@ extension RedditTopListVC: UITableViewDelegate, UITableViewDataSource {
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let redditTopChild = redditTopChilds?[indexPath.row] {
+            performSegue(withIdentifier: SegueIdentifier.openFullImage.rawValue, sender: redditTopChild)
+        }
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {

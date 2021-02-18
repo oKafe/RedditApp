@@ -19,6 +19,7 @@ class RedditTopListRequestsManager {
     
     func refresh(completion: @escaping (Model<RedditTop>?, Error?) -> ()) {
         self.after = nil
+        ImageLoaderSingleton.shared.clearCache()
         self.getRedditTop(completion: completion)
     }
     

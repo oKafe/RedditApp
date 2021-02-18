@@ -41,12 +41,20 @@ class ImageLoaderSingleton {
         }
     }
     
+    func clearCache() {
+        imageLoader.clearCache()
+    }
+    
 }
 
 class ImageLoader {
     
     private var requests = [UUID: URLSessionDataTask]()
     private var cache = [URL: UIImage]()
+    
+    func clearCache() {
+        cache = [URL: UIImage]()
+    }
     
     func load(_ url: URL, _ completion: @escaping (UIImage?) -> Void) -> UUID? {
 

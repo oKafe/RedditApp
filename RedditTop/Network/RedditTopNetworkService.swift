@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 final class RedditTopNetworkManager {
     class func getRedditTop(router: RedditTopRouter, completion: @escaping (Model<RedditTop>?, URLResponse?, Error?) -> ()) {
         guard let request = router.asURLRequest() else { return }
