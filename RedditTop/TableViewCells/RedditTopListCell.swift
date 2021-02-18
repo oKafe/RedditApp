@@ -40,7 +40,7 @@ class RedditTopListCell: UITableViewCell {
             return
         }
         let createdDate = Date(timeIntervalSince1970: createdAt)
-        timeLabel.text = createdDate.timeAgoString()
+        timeLabel.text = "\(model.data?.author ?? "") \(createdDate.timeAgoString())"
     }
 
 }
