@@ -21,6 +21,7 @@ class RedditTopListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         refreshData()
         configureRefreshControll()
     }
@@ -72,7 +73,6 @@ extension RedditTopListVC {
             imageViewerVC.imageUrl = imageUrl
         }
     }
-
 }
 
 //MARK: - TableView

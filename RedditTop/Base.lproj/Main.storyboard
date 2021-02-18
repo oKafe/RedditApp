@@ -112,15 +112,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZJi-nZ-om3">
-                                <rect key="frame" x="16" y="108" width="382" height="734"/>
+                                <rect key="frame" x="16" y="108" width="382" height="698"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XB3-Nh-l8c">
+                                <rect key="frame" x="147" y="814" width="120" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ZjW-6B-Wga"/>
+                                    <constraint firstAttribute="width" constant="120" id="t0x-og-XIG"/>
+                                </constraints>
+                                <state key="normal" title="Save picture"/>
+                                <connections>
+                                    <action selector="savePictureAction:" destination="ejl-mf-kbF" eventType="touchUpInside" id="NBB-vZ-NlO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="beY-x5-77W"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ZJi-nZ-om3" firstAttribute="bottom" secondItem="beY-x5-77W" secondAttribute="bottom" constant="-20" id="RjK-Eo-1Ai"/>
+                            <constraint firstItem="XB3-Nh-l8c" firstAttribute="centerX" secondItem="2Va-9Z-VhY" secondAttribute="centerX" id="6Qd-m7-juz"/>
                             <constraint firstItem="ZJi-nZ-om3" firstAttribute="top" secondItem="beY-x5-77W" secondAttribute="top" constant="20" id="byO-e9-e4T"/>
                             <constraint firstItem="ZJi-nZ-om3" firstAttribute="leading" secondItem="beY-x5-77W" secondAttribute="leading" constant="16" id="kNb-5S-40W"/>
+                            <constraint firstItem="XB3-Nh-l8c" firstAttribute="bottom" secondItem="beY-x5-77W" secondAttribute="bottom" constant="-8" id="s51-ZA-CTL"/>
+                            <constraint firstItem="XB3-Nh-l8c" firstAttribute="top" secondItem="ZJi-nZ-om3" secondAttribute="bottom" constant="8" id="uH8-jF-jm5"/>
                             <constraint firstItem="beY-x5-77W" firstAttribute="trailing" secondItem="ZJi-nZ-om3" secondAttribute="trailing" constant="16" id="yU4-bA-b4W"/>
                         </constraints>
                     </view>
@@ -136,7 +149,7 @@
         <!--Navigation Controller-->
         <scene sceneID="FZl-xH-iAE">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TOH-qX-IHR" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TOH-qX-IHR" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pqU-4q-Zhf">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
