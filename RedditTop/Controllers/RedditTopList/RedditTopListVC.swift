@@ -67,9 +67,9 @@ extension RedditTopListVC {
 extension RedditTopListVC {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == SegueIdentifier.openFullImage.rawValue {
-            guard let redditTopChild = sender as? Model<Child> else { return }
+            guard let imageUrl = sender as? String else { return }
             guard let imageViewerVC = segue.destination as? ImageViewerModalVC else { return }
-            imageViewerVC.imageUrl = redditTopChild.data?.url
+            imageViewerVC.imageUrl = imageUrl
         }
     }
 
@@ -98,7 +98,12 @@ extension RedditTopListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let redditTopChild = redditTopChilds?[indexPath.row] {
-            performSegue(withIdentifier: SegueIdentifier.openFullImage.rawValue, sender: redditTopChild)
+            let urlString = redditTopChild.data?.url
+            if (redditTopChild.data?.isVideo ?? false) {
+                openUrl(string: urlString)
+            } else {
+                performSegue(withIdentifier: SegueIdentifier.openFullImage.rawValue, sender: urlString)
+            }
         }
     }
     
@@ -114,6 +119,11 @@ extension RedditTopListVC: UITableViewDelegate, UITableViewDataSource {
 
 //MARK: - Helpers
 extension RedditTopListVC {
+    fileprivate func openUrl(string: String?) {
+        if let url = URL(string: string ?? "") {
+            UIApplication.shared.open(url)
+        }
+    }
     fileprivate func isLastCell(_ indexPath: IndexPath) -> Bool {
         return indexPath.row >= (self.redditTopChilds?.count ?? 0) - 2
     }
