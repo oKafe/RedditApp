@@ -23,6 +23,7 @@
 		3930752325DE9482009E495E /* RedditTopRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930752225DE9482009E495E /* RedditTopRouter.swift */; };
 		3930752825DEAABE009E495E /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930752725DEAABE009E495E /* AppConstants.swift */; };
 		3930752D25DEB045009E495E /* RedditTopListRequestsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930752C25DEB045009E495E /* RedditTopListRequestsManager.swift */; };
+		3937884725DEB55B006A73BE /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3937884625DEB55B006A73BE /* Date+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		3930752225DE9482009E495E /* RedditTopRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditTopRouter.swift; sourceTree = "<group>"; };
 		3930752725DEAABE009E495E /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		3930752C25DEB045009E495E /* RedditTopListRequestsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditTopListRequestsManager.swift; sourceTree = "<group>"; };
+		3937884625DEB55B006A73BE /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			children = (
 				393074C425DD4DEB009E495E /* URLSession+Ext.swift */,
 				3930751A25DD8AC3009E495E /* UIImageView+Ext.swift */,
+				3937884625DEB55B006A73BE /* Date+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				3930751F25DE90A9009E495E /* Router.swift in Sources */,
 				393074AD25DD4BD9009E495E /* RedditTopListVC.swift in Sources */,
 				3930751B25DD8AC3009E495E /* UIImageView+Ext.swift in Sources */,
+				3937884725DEB55B006A73BE /* Date+Ext.swift in Sources */,
 				393074A925DD4BD9009E495E /* AppDelegate.swift in Sources */,
 				3930752D25DEB045009E495E /* RedditTopListRequestsManager.swift in Sources */,
 				393074AB25DD4BD9009E495E /* SceneDelegate.swift in Sources */,

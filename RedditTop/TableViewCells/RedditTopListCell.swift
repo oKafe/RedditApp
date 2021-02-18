@@ -11,6 +11,8 @@ class RedditTopListCell: UITableViewCell {
 
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var postTitleLabel: UILabel!
+    @IBOutlet weak var numberOfCommentsLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,6 +34,13 @@ class RedditTopListCell: UITableViewCell {
     func configureWith(_ model: Model<Child>) {
         postTitleLabel.text = model.data?.title
         thumbnailImageView.loadImage(from: model.data?.thumbnail)
+        numberOfCommentsLabel.text = "\(model.data?.numberOfComments ?? 0) comments"
+        guard let createdAt = model.data?.createdUTC else {
+            timeLabel.text = nil
+            return
+        }
+        let createdDate = Date(timeIntervalSince1970: createdAt)
+        timeLabel.text = createdDate.timeAgoString()
     }
 
 }

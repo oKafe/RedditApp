@@ -32,10 +32,6 @@ class RedditTopListVC: UIViewController {
         topListTableView.reloadData()
     }
     
-    private func isLastCell(_ indexPath: IndexPath) -> Bool {
-        return indexPath.row >= (self.redditTopChilds?.count ?? 0) - 2
-    }
-    
     private func loadNext() {
         dataRequestsManager.loadNext { (result, error) in
             self.updateDataList(model: result)
@@ -73,4 +69,11 @@ extension RedditTopListVC: UITableViewDelegate, UITableViewDataSource {
         return UITableView.automaticDimension
     }
     
+}
+
+//MARK: - Helpers
+extension RedditTopListVC {
+    fileprivate func isLastCell(_ indexPath: IndexPath) -> Bool {
+        return indexPath.row >= (self.redditTopChilds?.count ?? 0) - 2
+    }
 }

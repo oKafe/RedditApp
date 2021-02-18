@@ -27,7 +27,7 @@ struct Child: Codable {
     let url: String?
     let thumbnail: String?
     let isVideo: Bool?
-    let createdUTC: Int?
+    let createdUTC: Double?
     
     enum CodingKeys: String, CodingKey {
         case authorFullname = "author_fullname"
